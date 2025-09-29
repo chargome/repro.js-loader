@@ -1,6 +1,20 @@
 import "./style.css";
 import javascriptLogo from "./javascript.svg";
 import viteLogo from "/vite.svg";
+import * as Sentry from "@sentry/browser";
+
+console.log(
+  Object.keys(Sentry)
+    .filter(
+      (key) =>
+        key == "getClient" ||
+        key == "onLoad" ||
+        key == "addEventProcessor" ||
+        key == "setContext" ||
+        key == "setTag"
+    )
+    .map((key) => [key, typeof Sentry[key]])
+);
 
 document.querySelector("#app").innerHTML = `
   <div>

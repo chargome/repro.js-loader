@@ -9,29 +9,6 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-    <script
-      src="https://js-de.sentry-cdn.com/<your-loader>.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      window.Sentry &&
-        Sentry.onLoad(function () {
-          console.log("onLoad");
-
-          const client = Sentry.getClient();
-          console.log(
-            Object.keys(Sentry)
-              .filter(
-                (key) =>
-                  key == "getClient" ||
-                  key == "onLoad" ||
-                  key == "addEventProcessor" ||
-                  key == "setContext" ||
-                  key == "setTag"
-              )
-              .map((key) => [key, typeof Sentry[key]])
-          );
-        });
-    </script>
+    <script></script>
   </body>
 </html>

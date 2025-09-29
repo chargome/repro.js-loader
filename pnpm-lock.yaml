@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@sentry/browser':
+        specifier: ^10.16.0
+        version: 10.16.0
     devDependencies:
       vite:
         specifier: ^7.1.7
@@ -280,6 +284,30 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@sentry-internal/browser-utils@10.16.0':
+    resolution: {integrity: sha512-0o6fI2FUPlwa6AyqNY8RfCMhzveVDKW27uFyFXZ6d+tMfnjFO7iRe7UlzM/9cJ6lDiCtjoIXiuttZsMXDlosWg==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/feedback@10.16.0':
+    resolution: {integrity: sha512-dyFNQMkqe0YKTkdAVpFenV+5KUjcu7SqysmXUE91vpqfc/9J+6KAYJH9hE6IvoCf7GlwyzH85bJDniUjF2vt4A==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/replay-canvas@10.16.0':
+    resolution: {integrity: sha512-JGwcWItG4evtE/Clz/33y59cTJIeAOD9EQh3iEZC6wJ94eNy1cjjUTYBrmUAsW4sMpv820yksSrskSMzYHofFw==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/replay@10.16.0':
+    resolution: {integrity: sha512-cKCkXNS+giNTo6euhYXpiIit2hH7YLa3s8Kl/QE8CJw9ao1oMNezNPHR1dxZzhr5+oziGdIphMVR7EAhdA4tsQ==}
+    engines: {node: '>=18'}
+
+  '@sentry/browser@10.16.0':
+    resolution: {integrity: sha512-NHufRQ5sjXcAXInHKjQrm561DyGNO0bscKPDbwsSGAXGwOhyz+WOaNSZJmx9/v6JJfAYSa7fr/zKG/bMuc3+OQ==}
+    engines: {node: '>=18'}
+
+  '@sentry/core@10.16.0':
+    resolution: {integrity: sha512-jGcigU8kU8DfmTjWoLUpftgkayWjKLPBWm8TN3OJOevoQ319MwqoyukWXTMVu4FoyH+Vw6+xovDqMgPd/Mexsg==}
+    engines: {node: '>=18'}
+
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
@@ -516,6 +544,34 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.52.3':
     optional: true
+
+  '@sentry-internal/browser-utils@10.16.0':
+    dependencies:
+      '@sentry/core': 10.16.0
+
+  '@sentry-internal/feedback@10.16.0':
+    dependencies:
+      '@sentry/core': 10.16.0
+
+  '@sentry-internal/replay-canvas@10.16.0':
+    dependencies:
+      '@sentry-internal/replay': 10.16.0
+      '@sentry/core': 10.16.0
+
+  '@sentry-internal/replay@10.16.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 10.16.0
+      '@sentry/core': 10.16.0
+
+  '@sentry/browser@10.16.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 10.16.0
+      '@sentry-internal/feedback': 10.16.0
+      '@sentry-internal/replay': 10.16.0
+      '@sentry-internal/replay-canvas': 10.16.0
+      '@sentry/core': 10.16.0
+
+  '@sentry/core@10.16.0': {}
 
   '@types/estree@1.0.8': {}
 
