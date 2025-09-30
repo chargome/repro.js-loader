@@ -3,6 +3,11 @@ import javascriptLogo from "./javascript.svg";
 import viteLogo from "/vite.svg";
 import * as Sentry from "@sentry/browser";
 
+Sentry.init({
+  dsn: "<DSN>",
+  sendDefaultPii: true,
+});
+
 console.log(
   Object.keys(Sentry)
     .filter(
@@ -15,6 +20,8 @@ console.log(
     )
     .map((key) => [key, typeof Sentry[key]])
 );
+
+window.Sentry = Sentry;
 
 document.querySelector("#app").innerHTML = `
   <div>
